@@ -1,0 +1,56 @@
+.sidebar {
+    width: 250px;
+    background-color: #2f3437;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed; // Đảm bảo sidebar cố định bên trái
+    top: 60px;
+    left: 0;
+    z-index: 1000; // Đảm bảo sidebar nằm trên các phần tử khác
+    overflow-y: auto; // Cho phép cuộn nếu nội dung dài
+  
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        padding: 10px 0;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #444;
+        }
+      }
+    }
+  
+    .boardSection {
+      margin-top: 20px;
+  
+      h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+  
+      ul {
+        li {
+          padding: 8px 0;
+          font-size: 14px;
+        }
+      }
+    }
+  
+    .currentTasks {
+      margin-top: 20px;
+  
+      h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+    }
+  }

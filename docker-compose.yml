@@ -1,0 +1,43 @@
+services:
+  app:
+    build: 
+      dockerfile: dockerfile
+    container_name: trello-fe
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app/src # Mount frontend source code
+    environment:
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+      - backend # Add dependency on backend
+
+  backend:
+    build:
+      context: ../../Trello/be-trello 
+      dockerfile: dockerfile
+    container_name: trello-backend
+    ports:
+      - "3000:3000" # Expose backend on port 3000
+    volumes:
+      - ../../Trello/be-trello:/app # Mount backend source code
+    environment:
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-fe 
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_DB}
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
