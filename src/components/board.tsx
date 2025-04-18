@@ -1,4 +1,4 @@
-import styles from '../styles/Board.module.scss';
+import styles from '../styles/board.module.scss';
 import Card from './card';
 import { BoardColumn } from '../types';
 import { FaStar, FaLock, FaShareAlt, FaFilter, FaBolt } from 'react-icons/fa'; // Thêm các biểu tượng

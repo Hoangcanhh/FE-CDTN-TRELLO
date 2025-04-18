@@ -1,4 +1,4 @@
-import styles from '../styles/Card.module.scss';
+import styles from '../styles/card.module.scss';
 import { Card as CardType } from '../types';
 
 interface CardProps {

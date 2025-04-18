@@ -1,4 +1,4 @@
-import styles from './styles/App.module.scss';
+import styles from './styles/app.module.scss';
 import Sidebar from './components/sidebar';
 import Header from './components/header';
 import Board from './components/board';

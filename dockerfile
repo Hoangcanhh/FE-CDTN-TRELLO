@@ -1,20 +1,29 @@
-# Sử dụng Node.js làm base image
-FROM node:22-slim
+# Sử dụng Node.js image chính thức
+FROM node:18 as build
 
-# Thiết lập thư mục làm việc
+# Tạo thư mục làm việc
 WORKDIR /app
 
-# Sao chép package.json và package-lock.json vào thư mục làm việc
+# Sao chép package.json và package-lock.json
 COPY package*.json ./
 
-# Cài đặt các dependencies
+# Cài đặt dependencies
 RUN npm install
 
-# Sao chép toàn bộ mã nguồn vào thư mục làm việc
+# Sao chép toàn bộ mã nguồn
 COPY . .
 
-# Mở cổng mà ứng dụng sẽ lắng nghe
-EXPOSE 3000
+# Build ứng dụng
+RUN npm run build
 
-# Lệnh để chạy ứng dụng
-CMD ["npm", "start"]
+# Sử dụng Nginx để phục vụ ứng dụng React
+FROM nginx:alpine
+
+# Sao chép build output từ bước trước
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Mở cổng
+EXPOSE 80
+
+# Khởi động Nginx
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,4 +1,4 @@
-import styles from '../styles/Header.module.scss';
+import styles from '../styles/header.module.scss';
 import { FaBars, FaSearch, FaBell } from 'react-icons/fa'; // Sử dụng react-icons/fa cho các biểu tượng
 
 const Header = () => {
