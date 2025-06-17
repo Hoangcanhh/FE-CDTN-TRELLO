@@ -1,0 +1,27 @@
+.container {
+  padding: 16px;
+  border-top: 1px solid #ddd;
+  margin-top: 16px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.info {
+  font-size: 12px;
+  color: #666;
+  margin-top: 12px;
+  text-align: center;
+}

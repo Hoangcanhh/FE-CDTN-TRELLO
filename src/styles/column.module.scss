@@ -1,0 +1,124 @@
+.column {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-right: 16px;
+  min-width: 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  cursor: grab; /* Hiển thị con trỏ khi chuẩn bị kéo */
+  &:active {
+    cursor: grabbing; /* Con trỏ khi đang kéo */
+}
+&[data-is-dragging='true'] {
+    opacity: 0.8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+.header {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.addCardBtn {
+  margin-top: 12px;
+  background: #fff;
+  color: #0079bf;
+  border: 1px solid #0079bf;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  .addCardIcon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+    min-width: 120px;
+    white-space: pre-line;
+    padding: 8px 12px;
+    padding: 8px 12px;
+    white-space: pre-line;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    &:hover {
+    background: #e6f4ff;
+    color: #026aa7; // màu chữ xanh nhạt khi hover
+    border: 1px solid #026aa7; // viền xanh nhạt khi hover
+    }
+}
+.addCardBtn:hover,
+.addCardBtn:focus {
+  background: #e6f4ff;
+  color: #026aa7;
+  border: 1px solid #026aa7; // viền xanh nhạt khi hover hoặc focus
+}
+.header span {
+    color: #000;
+}
+.menuBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 18px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.columnMenu {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+  min-width: 180px;
+  color: #222;
+  padding: 8px 0;
+  animation: fadeIn 0.15s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.menuItem {
+  display: flex;         
+  width: 100%;            
+  padding: 12px 20px ;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 0; 
+  align-items: center;
+  justify-self: center;
+  font-weight: 400;
+  &:hover {
+    background: #f4f5f7;
+  }
+  .menuIcon{
+    margin-right: 8px;
+    font-size: 20px;
+  }
+}
+.menuDanger {
+  color: #f44336;
+}
+
+//chỉnh lại form columnMenu
+.columnMenu form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}

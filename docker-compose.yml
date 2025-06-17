@@ -2,6 +2,6 @@ services:
   frontend:
     build:
       dockerfile: Dockerfile
-    container_name: trello_frontend
+    image: trello_frontend
     ports:
-      - "3001:80"
+      - "5173:80"

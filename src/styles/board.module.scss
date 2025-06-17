@@ -1,139 +1,44 @@
 .board {
+  background: #0079bf;
+  min-height: 100vh;
+  padding-top: 56px;
+  overflow-x: auto;
+}
+
+.columns {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 1;
-  margin-top: 120px; // Đẩy Board xuống để tránh bị header chính đè (header cao 60px + sub-header cao 60px)
+  align-items: flex-start;
+  gap: 16px;
+  padding: 32px 24px;
+}
 
-  .subHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
-    background-color: #1d2125;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 70px; // Nằm ngay dưới header chính (header chính cao 60px)
-    left: 300px; // Đẩy sub-header sang phải để tránh đè lên sidebar
-    right: 0;
-    z-index: 1000;
-
-    .leftSection {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .logo {
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      .iconButton {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-
-        &:hover {
-          color: #ccc;
-        }
-      }
-
-      .boardTitle {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 18px;
-        font-weight: bold;
-
-        .dropdownArrow {
-          font-size: 12px;
-        }
-      }
-    }
-
-    .rightSection {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .actionButton {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        background-color: #2f3437;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px;
-
-        &:hover {
-          background-color: #444;
-        }
-      }
-
-      .shareButton {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        background-color: #0079bf;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px;
-
-        &:hover {
-          background-color: #026aa7;
-        }
-
-        .shareCount {
-          background-color: #026aa7;
-          border-radius: 50%;
-          padding: 2px 6px;
-          font-size: 12px;
-        }
-      }
-    }
+.addColumnBtn {
+  min-width: 272px;
+  height: 40px;
+  background: #ffffff3d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover {
+    background: #ffffff52;
   }
 
-  .columns {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding: 10px;
-
-    .column {
-      background-color: #2f3437;
-      border-radius: 8px;
-      padding: 15px;
-      min-width: 250px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-
-      h3 {
-        color: white;
-        margin: 0 0 10px;
-      }
-
-      .addButton {
-        background-color: #444;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #555;
-        }
-      }
-    }
+  .addColumnIcon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  padding: 8px 12px;
+  white-space: pre-line;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  &:hover{
+    background: #ffffff52;
   }
 }

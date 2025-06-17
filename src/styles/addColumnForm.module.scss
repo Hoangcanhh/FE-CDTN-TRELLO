@@ -1,0 +1,55 @@
+.form {
+  display: flex;
+  flex-direction: column; 
+  gap: 0;
+  background: #fff; 
+  border-radius: 16px;
+  padding: 16px;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #0079bf; // viền xanh nhạt
+  border-radius: 4px;
+  font-size: 16px;
+  color: #172b4d;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.form input::placeholder {
+  color: #bdbdbd;
+  opacity: 1;
+}
+
+.form input:focus {
+  outline: none;
+  border-color: #005a8d;
+}
+
+.form button {
+  background: #fff;
+  color: #0079bf;
+  border: 1px solid #0079bf;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  min-width: 120px;
+  white-space: pre-line;
+}
+
+.form button:hover {
+  background: #e6f4ff;
+  color: #005a8d;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
